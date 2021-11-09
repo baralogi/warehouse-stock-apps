@@ -4,7 +4,8 @@
     <main role="main" class="flex-shrink-0">
         <div class="container">
             <h1 class="mt-5">Warehouse Stock App</h1>
-            <p class="lead">Sistem informasi pengelolaan stok gudang</p>
+            <p class="lead">Sistem informasi pengelolaan stok gudang. 
+                Fungsi: manajemen data user, manajemen data barang, informasi log aktivitas barang (barang masuk dan keluar)</p>
             <div class="row">
                 <div class="col-md-3">
                     <div class="card mb-4">
