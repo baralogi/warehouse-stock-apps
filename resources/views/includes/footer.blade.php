@@ -1,5 +1,5 @@
 <footer class="footer mt-auto py-3">
     <div class="container">
-        <span class="text-muted">Place sticky footer content here.</span>
-    </div>
+        <span class="text-muted">Made by @ssembara</span>
+    </div>      
 </footer>
