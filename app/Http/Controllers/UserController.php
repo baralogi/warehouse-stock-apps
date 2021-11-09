@@ -2,24 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\ItemResource;
-use App\Services\ItemService;
-use App\User;
+use App\Services\UserService;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    // protected $itemService;
+    protected $userService;
 
-    // public function __construct(ItemService $itemService)
-    // {
-    //     $this->itemService = $itemService;
-    // }
+    public function __construct(UserService $userService)
+    {
+        $this->userService = $userService;
+    }
 
     public function index()
     {
-        // $items = $this->itemService->getItems();
-        $users= User::with('roles')->get();
+        $users = $this->userService->getUsers();
         return view('pages.user', [
             'users' => $users,
         ]);

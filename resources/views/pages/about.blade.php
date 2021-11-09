@@ -21,7 +21,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <img src="https://avatars.githubusercontent.com/u/31835484?s=400&u=eac855ef7e3f300fe11317369b112b1baa5a3e77&v=4"
-                                            class="img-fluid rounded mx-auto d-block" alt="avatar">
+                                            class="img-fluid rounded float-right" alt="avatar">
                                     </div>
                                     <div class="col-md-6">
                                         <h1>Hi, Sembara Here</h1>

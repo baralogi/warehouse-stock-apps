@@ -19,7 +19,7 @@
                     <li class="breadcrumb-item active" aria-current="page">Stok Masuk</li>
                 </ol>
             </nav>
-            @can('create items')
+            @can('create item')
                 <div class="card card-default">
                     <div class="card-body">
                         <form id="addStock" method="POST" action="">
