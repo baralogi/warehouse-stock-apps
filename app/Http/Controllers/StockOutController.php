@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Services\ItemService;
 use Illuminate\Http\Request;
 
-class StockInController extends Controller
+class StockOutController extends Controller
 {
     protected $itemService;
 
@@ -17,15 +17,14 @@ class StockInController extends Controller
     public function index()
     {
         $item = $this->itemService->getItems();
-        return view('pages.stock-in', [
+        return view('pages.stock-out', [
             'items' => $item,
         ]);
     }
 
-    public function stockIn(Request $request)
+    public function stockOut(Request $request)
     {
-        $stockItem = $this->itemService->stockIn($request->only(['amount']), $request->item);
+        $stockItem = $this->itemService->stockOut($request->only(['amount']), $request->item);
         return $stockItem;
     }
-
 }

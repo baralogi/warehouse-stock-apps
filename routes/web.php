@@ -14,18 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// })->name('home');
+Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home'); 
 Route::get('/about', 'AboutController@index')->name('about'); 
 Route::resource('/users', 'UserController')->only(['index']); 
 Route::resource('/items', 'ItemController')->only(['index', 'store', 'update','destroy']);
 Route::resource('/stock-in', 'StockInController')->only(['index']);
+Route::resource('/stock-out', 'StockOutController')->only(['index']);
 
 
-Route::view('customers', 'pages.customers');
-
-Auth::routes();
 

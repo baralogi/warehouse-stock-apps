@@ -21,3 +21,5 @@ use Illuminate\Support\Facades\Route;
 Route::resource('items', "ItemController")->only(['show']);
 Route::put('/items/{item}/stocks/in', 'StockInController@stockIn')
     ->name('stockIn');
+Route::put('/items/{item}/stocks/out', 'StockOutController@stockOut')
+    ->name('stockOut');

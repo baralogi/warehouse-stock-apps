@@ -7,12 +7,18 @@
                 <div class="p-2 flex-grow-1 bd-highlight">
                     <h2 class="mt-5">Data Barang</h2>
                 </div>
-                @can('create items')
+                @can('create item')
                 <div class="p-2 bd-highlight">
                     <button type="button" class="mt-5 btn btn-sm btn-success" data-toggle="modal" data-target="#create"> +
                     </button>
                 </div>
                 @endcan
+                <div class="p-2 bd-highlight">
+                    <a href={{ route('stock-in.index') }} class="mt-5 btn btn-sm btn-outline-success"> Log Masuk</a>
+                </div>
+                <div class="p-2 bd-highlight">
+                    <a href={{ route('stock-out.index') }} class="mt-5 btn btn-sm btn-outline-danger"> Log Keluar</a>
+                </div>
             </div>
 
             <nav aria-label="breadcrumb">

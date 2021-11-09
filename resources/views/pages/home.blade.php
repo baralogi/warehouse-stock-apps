@@ -43,7 +43,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Barang Keluar</h5>
                             <p class="card-text">Daftar barang keluar</p>
-                            <a href="#" class="btn btn-primary">See</a>
+                            <a href={{ route('stock-out.index') }} class="btn btn-primary">See</a>
                         </div>
                     </div>
                 </div>

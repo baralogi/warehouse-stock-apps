@@ -44,4 +44,10 @@ class ItemRepository
         $item = $this->item->where('id', $id)->select('stock')->first();
         return $this->item->where('id', $id)->update(["stock" => $item->stock + $data["amount"]]);
     }
+
+    public function stockOut($data, $id)
+    {
+        $item = $this->item->where('id', $id)->select('stock')->first();
+        return $this->item->where('id', $id)->update(["stock" => $item->stock - $data["amount"]]);
+    }
 }

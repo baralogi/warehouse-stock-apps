@@ -5,7 +5,7 @@
         <div class="container">
             <div class="d-flex bd-highlight">
                 <div class="p-2 flex-grow-1 bd-highlight">
-                    <h2 class="mt-5">Stok Masuk</h2>
+                    <h2 class="mt-5">Stok Keluar</h2>
                 </div>
                 <div class="p-2 bd-highlight">
                     <a href={{ route('items.index') }} type="button" class="mt-5 btn btn-sm btn-success"> Lihat Stok
@@ -16,7 +16,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href={{ route('home') }}>Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Stok Masuk</li>
+                    <li class="breadcrumb-item active" aria-current="page">Stok Keluar</li>
                 </ol>
             </nav>
             @can('create item')
@@ -49,8 +49,8 @@
                                 <div class="form-group col-md-6">
                                     <select class="form-control" id="itemSelect" name="status">
                                         <option value="">Pilih Status...</option>
-                                        <option value="pembelian">Pembelian</option>
-                                        <option value="retur pembelian">Retur</option>
+                                        <option value="penjualan">Penjualan</option>
+                                        <option value="retur penjualan">Retur</option>
                                     </select>
                                 </div>
                             </div>
@@ -135,7 +135,7 @@
         let lastIndex = 0;
 
         // Get Data
-        firebase.database().ref('stock-in/').on('value', function(snapshot) {
+        firebase.database().ref('stock-out/').on('value', function(snapshot) {
             var value = snapshot.val();
             var htmls = [];
             $.each(value, function(index, value) {
@@ -167,7 +167,7 @@
 
             console.log(amount);
 
-            firebase.database().ref('stock-in/' + id).set({
+            firebase.database().ref('stock-out/' + id).set({
                 date: getDate(),
                 itemCode: itemCode,
                 name: name,
@@ -178,7 +178,7 @@
 
             $.ajax({
                 type: "PUT",
-                url: `{{ url('api/items/${itemId}/stocks/in') }}`,
+                url: `{{ url('api/items/${itemId}/stocks/out') }}`,
                 data: {
                     "amount": amount
                 },

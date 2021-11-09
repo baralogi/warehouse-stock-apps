@@ -37,5 +37,10 @@ class ItemService {
     {
         return $this->itemRepository->stockIn($data, $id);
     }
+
+    public function stockOut($data, $id)
+    {
+        return $this->itemRepository->stockOut($data, $id);
+    }
     
 }
