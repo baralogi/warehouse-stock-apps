@@ -10,7 +10,7 @@
                 <div class="p-2 bd-highlight">
                     <a href={{ route('items.index') }} type="button" class="mt-5 btn btn-sm btn-success"> Lihat Stok
                     </a>
-                </div>  
+                </div>
             </div>
 
             <nav aria-label="breadcrumb">
@@ -19,45 +19,47 @@
                     <li class="breadcrumb-item active" aria-current="page">Stok Masuk</li>
                 </ol>
             </nav>
-
-            <div class="card card-default">
-                <div class="card-body">
-                    <form id="addStock" method="POST" action="">
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <select class="form-control" id="itemSelect">
-                                    <option value="">Pilih Barang...</option>
-                                    @foreach ($items as $item)
-                                        <option value="{{ $item->id }}">
-                                            {{ $item->name }}
-                                        </option>
-                                    @endforeach
-                                </select>
+            @can('create items')
+                <div class="card card-default">
+                    <div class="card-body">
+                        <form id="addStock" method="POST" action="">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <select class="form-control" id="itemSelect">
+                                        <option value="">Pilih Barang...</option>
+                                        @foreach ($items as $item)
+                                            <option value="{{ $item->id }}">
+                                                {{ $item->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <input type="hidden" id="name" name="name">
+                                <input type="hidden" id="item_id" name="item_id">
+                                <div class="form-group col-md-6">
+                                    <input class="form-control" name="item_code" id="item_code" type="text"
+                                        placeholder="Kode Barang">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input class="form-control" name="unit" id="unit" type="text" placeholder="Satuan">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input class="form-control" name="amount" id="amount" type="number" placeholder="Jumlah">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <select class="form-control" id="itemSelect" name="status">
+                                        <option value="">Pilih Status...</option>
+                                        <option value="pembelian">Pembelian</option>
+                                        <option value="pembelian">Retur</option>
+                                    </select>
+                                </div>
                             </div>
-                            <input type="hidden" id="name" name="name">
-                            <input type="hidden" id="item_id" name="item_id">
-                            <div class="form-group col-md-6">
-                                <input class="form-control" name="item_code" id="item_code" type="text"
-                                    placeholder="Kode Barang">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <input class="form-control" name="unit" id="unit" type="text" placeholder="Satuan">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <input class="form-control" name="amount" id="amount" type="number" placeholder="Jumlah">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <select class="form-control" id="itemSelect" name="status">
-                                    <option value="">Pilih Status...</option>
-                                    <option value="pembelian">Pembelian</option>
-                                    <option value="pembelian">Retur</option>
-                                </select>
-                            </div>
-                        </div>
-                        <button id="submitItem" type="button" class="btn btn-success mb-2">Submit</button>
-                    </form>
+                            <button id="submitItem" type="button" class="btn btn-success mb-2">Submit</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
+            @endcan
+
 
             <table class="table mt-2">
                 <thead>

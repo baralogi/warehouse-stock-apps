@@ -7,10 +7,12 @@
                 <div class="p-2 flex-grow-1 bd-highlight">
                     <h2 class="mt-5">Data Barang</h2>
                 </div>
+                @can('create items')
                 <div class="p-2 bd-highlight">
                     <button type="button" class="mt-5 btn btn-sm btn-success" data-toggle="modal" data-target="#create"> +
                     </button>
                 </div>
+                @endcan
             </div>
 
             <nav aria-label="breadcrumb">
@@ -47,10 +49,14 @@
                             <td>
                                 <button type="button" class="btn btn-sm btn-outline-info" data-toggle="modal"
                                     data-target="#show{{ $item->id }}">Lihat</button>
-                                <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal"
-                                    data-target="#update{{ $item->id }}">Ubah</button>
-                                <button type=" button" class="btn btn-sm btn-outline-danger" data-toggle="modal"
-                                    data-target="#destroy{{ $item->id }}">Hapus</button>
+                                @can('edit items')
+                                    <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal"
+                                        data-target="#update{{ $item->id }}">Ubah</button>
+                                @endcan
+                                @can('delete items')
+                                    <button type=" button" class="btn btn-sm btn-outline-danger" data-toggle="modal"
+                                        data-target="#destroy{{ $item->id }}">Hapus</button>F
+                                @endcan
                             </td>
                         </tr>
                         <!-- show -->
@@ -138,7 +144,7 @@
                                         <div class="modal-body">
                                             <div class="row">
                                                 <div class="col-12">
-                                                    <h3>Apakah anda yakin ingin menghapus {{ $item->name }} ?</h3    >
+                                                    <h3>Apakah anda yakin ingin menghapus {{ $item->name }} ?</h3>
                                                 </div>
                                             </div>
                                         </div>

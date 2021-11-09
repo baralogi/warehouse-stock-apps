@@ -19,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 // })->name('home');
 
 Route::get('/', 'HomeController@index')->name('home'); 
-Route::get('/about', 'AboutController@index')->name('about');  
+Route::get('/about', 'AboutController@index')->name('about'); 
+Route::resource('/users', 'UserController')->only(['index']); 
 Route::resource('/items', 'ItemController')->only(['index', 'store', 'update','destroy']);
 Route::resource('/stock-in', 'StockInController')->only(['index']);
 

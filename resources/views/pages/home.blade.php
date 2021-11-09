@@ -12,7 +12,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Master User</h5>
                             <p class="card-text">Manajemen master user</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a href={{ route('users.index') }} class="btn btn-primary">See</a>
                         </div>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Master Barang</h5>
                             <p class="card-text">Manajemen master barang</p>
-                            <a href={{ route('items.index') }} class="btn btn-primary">Go somewhere</a>
+                            <a href={{ route('items.index') }} class="btn btn-primary">See</a>
                         </div>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Barang Masuk</h5>
                             <p class="card-text">Daftar barang masuk</p>
-                            <a href={{ route('stock-in.index') }} class="btn btn-primary">Go somewhere</a>
+                            <a href={{ route('stock-in.index') }} class="btn btn-primary">See</a>
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Barang Keluar</h5>
                             <p class="card-text">Daftar barang keluar</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a href="#" class="btn btn-primary">See</a>
                         </div>
                     </div>
                 </div>
