@@ -16,7 +16,7 @@ class StockOutController extends Controller
 
     public function index()
     {
-        $item = $this->itemService->getItems();
+        $item = $this->itemService->getItems()->where('stock',  '>', 0);
         return view('pages.stock-out', [
             'items' => $item,
         ]);
