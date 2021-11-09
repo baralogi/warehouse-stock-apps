@@ -55,13 +55,13 @@
                             <td>
                                 <button type="button" class="btn btn-sm btn-outline-info" data-toggle="modal"
                                     data-target="#show{{ $item->id }}">Lihat</button>
-                                @can('edit items')
+                                @can('edit item')
                                     <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal"
                                         data-target="#update{{ $item->id }}">Ubah</button>
                                 @endcan
-                                @can('delete items')
+                                @can('delete item')
                                     <button type=" button" class="btn btn-sm btn-outline-danger" data-toggle="modal"
-                                        data-target="#destroy{{ $item->id }}">Hapus</button>F
+                                        data-target="#destroy{{ $item->id }}">Hapus</button>
                                 @endcan
                             </td>
                         </tr>

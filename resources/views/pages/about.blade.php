@@ -32,18 +32,19 @@
                                             STIKOM Surabaya. I am a hard worker and have a high curiosity about science,
                                             especially about programming. I have a big dream to
                                             become the best software engineer in the universe.</p>
-                                        <p>Get in touch via email at <a href="mailto:sembara9090@gmail.com">sembara9090@gmail.com</a></p>
+                                        <p>Get in touch via email at <a
+                                                href="mailto:sembara9090@gmail.com">sembara9090@gmail.com</a></p>
                                     </div>
 
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                            <ul>
-                                <li>Email : sembara9090@gmail.com</li>
-                                <li>github : @ssembara</li>
-                                <li>instagram : @ssembara</li>
-                                <li>twitter: @ssembara99</li>
+                        <div class="tab-pane fade mt-3" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="mailto:sembara9090@gmail.com">Email : sembara9090@gmail.com</a></li>
+                                <li class="list-group-item"><a href="https://github.com/ssembara" target="_blank">Github : @ssembara</a></li>
+                                <li class="list-group-item"><a href="https://www.instagram.com/ssembara/" target="_blank">Instagram : @ssembara</a></li>
+                                <li class="list-group-item"><a href="https://twitter.com/ssembara99" target="_blank">Twitter: @ssembara99</a></li>
                             </ul>
                         </div>
                     </div>
