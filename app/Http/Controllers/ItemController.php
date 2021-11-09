@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ItemResource;
 use App\Services\ItemService;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
-    protected $permitService;
+    protected $itemService;
 
     public function __construct(ItemService $itemService)
     {
@@ -16,10 +17,16 @@ class ItemController extends Controller
 
     public function index()
     {
-        $item = $this->itemService->getItems();
+        $items = $this->itemService->getItems();
         return view('pages.item', [
-            'items' => $item,
+            'items' => $items,
         ]);
+    }
+
+    public function show(Request $request)
+    { 
+        $item = $this->itemService->getItemById($request->item);
+        return new ItemResource($item);
     }
 
     public function store(Request $request)

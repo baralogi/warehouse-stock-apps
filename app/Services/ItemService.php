@@ -14,6 +14,11 @@ class ItemService {
         return $this->itemRepository->getAll();   
     }
 
+    public function getItemById($id)
+    {
+        return $this->itemRepository->getById($id);
+    }
+
     public function storeItem($data) {
         return $this->itemRepository->store($data);
     }
@@ -26,6 +31,11 @@ class ItemService {
     public function destroyItem($id)
     {
         return $this->itemRepository->destroy($id);
+    }
+
+    public function stockIn($data, $id)
+    {
+        return $this->itemRepository->stockIn($data, $id);
     }
     
 }

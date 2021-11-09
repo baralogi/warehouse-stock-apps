@@ -46,13 +46,9 @@
 <body class="d-flex flex-column h-100">
     @include('includes.navbar')
     @yield('main')
-
-    <footer class="footer mt-auto py-3">
-        <div class="container">
-            <span class="text-muted">Place sticky footer content here.</span>
-        </div>
-    </footer>
+    @include('includes.footer')
 </body>
 <script src="{{ asset('js/app.js') }}" defer></script>
+@stack('script')
 
 </html>

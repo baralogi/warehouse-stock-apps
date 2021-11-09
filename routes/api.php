@@ -18,4 +18,6 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::resource('items', "ItemController")->only(['update']);
+Route::resource('items', "ItemController")->only(['show']);
+Route::put('/items/{item}/stocks/in', 'StockInController@stockIn')
+    ->name('stockIn');

@@ -30,4 +30,11 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'firebase' => [
+        'api_key' => 'AIzaSyDarQfygeyezL5rID7x86OGUr0_QpCfJiU', // Only used for JS integration
+        'auth_domain' => 'warehouse-stock-apps.firebaseapp.com', // Only used for JS integration
+        'database_url' => 'https://warehouse-stock-apps-default-rtdb.firebaseio.com',
+        'storage_bucket' => 'warehouse-stock-apps.appspot.com', // Only used for JS integration
+    ],
+
 ];

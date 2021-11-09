@@ -6,7 +6,7 @@ use App\Item;
 
 class ItemRepository
 {
-    protected $permit;
+    protected $item;
 
 
     public function __construct(Item $item)
@@ -19,7 +19,7 @@ class ItemRepository
         return $this->item->get();
     }
 
-    public function getById($id)    
+    public function getById($id)
     {
         return $this->item->where('id', $id)->first();
     }
@@ -37,5 +37,11 @@ class ItemRepository
     public function destroy($id)
     {
         return $this->item->where('id', $id)->delete();
+    }
+
+    public function stockIn($data, $id)
+    {
+        $item = $this->item->where('id', $id)->select('stock')->first();
+        return $this->item->where('id', $id)->update(["stock" => $item->stock + $data["amount"]]);
     }
 }
